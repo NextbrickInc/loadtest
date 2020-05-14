@@ -1,0 +1,6 @@
+ $ echo "docker run \                                                                                                                                     [±master ●]
+   --volume “${volume_path}”:${jmeter_path} \
+   jmeter \
+   -t ${jmeter_path}/pshool.jmx \
+   -l ${jmeter_path}/tmp/result_${timestamp}.jtl \
+   -j ${jmeter_path}/tmp/jmeter_${timestamp}.log"
