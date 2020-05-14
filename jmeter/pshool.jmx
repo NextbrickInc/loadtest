@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.1.1 r1855137">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Powerhouse Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="HOST" elementType="Argument">
+            <stringProp name="Argument.name">HOST</stringProp>
+            <stringProp name="Argument.value">${__P([HOST],[localhost])}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PORT" elementType="Argument">
+            <stringProp name="Argument.name">PORT</stringProp>
+            <stringProp name="Argument.value">${__P([PORT],[8983])}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="COLLECTION" elementType="Argument">
+            <stringProp name="Argument.name">COLLECTION</stringProp>
+            <stringProp name="Argument.value">${__P([COLLECTION],[pschool])}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Powerhouse Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">400</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">100</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="HTTP  Controller" enabled="true"/>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[{&#xd;
+&quot;ITEM_BANK$id&quot;: [&#xd;
+3673&#xd;
+],&#xd;
+&quot;CURRICULUM$description&quot;: [&#xd;
+&quot;Fluently multiply and divide within 100, using strategies such as the relationship between multiplication and division (e.g., knowing that 8 × 5 = 40, one knows 40 ÷ 5 = 8) or properties of operations. By the end of Grade 3, know from memory all products of two one-digit numbers.&quot;,&#xd;
+&quot;Tell and write time to the nearest minute and measure time intervals in minutes. Solve word problems involving addition and subtraction of time intervals in minutes, e.g., by representing the problem on a number line diagram.&quot;,&#xd;
+&quot;Tell and write time to the nearest minute and measure time intervals in minutes. Solve word problems involving addition and subtraction of time intervals in minutes, e.g., by representing the problem on a number line diagram.&quot;,&#xd;
+&quot;Fluently multiply and divide within 100, using strategies such as the relationship between multiplication and division (e.g., knowing that 8 × 5 = 40, one knows 40 ÷ 5 = 8) or properties of operations. By the end of Grade 3, know from memory all products of two one-digit numbers.&quot;&#xd;
+],&#xd;
+&quot;soft_delete_flag&quot;: false,&#xd;
+&quot;LAST_EDIT_USER$last_name&quot;: &quot;Newcomb&quot;,&#xd;
+&quot;CREATE_USER$identifier&quot;: &quot;pmSystem&quot;,&#xd;
+&quot;ORGANIZATION$id&quot;: 1293,&#xd;
+&quot;type&quot;: &quot;ASSESSMENT_ITEM&quot;,&#xd;
+&quot;CURRICULUM$ancestor_id&quot;: [&#xd;
+${anc_id}&#xd;
+],&#xd;
+&quot;LAST_EDIT_USER$identifier&quot;: &quot;amy.newcomb&quot;,&#xd;
+&quot;LAST_EDIT_USER$email&quot;: &quot;amy.newcomb&quot;,&#xd;
+&quot;CURRICULUM$curriculum_code&quot;: [&#xd;
+&quot;CCSS.Math.Content.3.OA.C.7&quot;,&#xd;
+&quot;CCSS.Math.Content.3.MD.A.1&quot;,&#xd;
+&quot;FL.MAFS.3.MD.1.1&quot;,&#xd;
+&quot;FL.MAFS.3.OA.3.7&quot;&#xd;
+],&#xd;
+&quot;autocomplete&quot;: [&#xd;
+&quot;CCSS.Math.Content.3.OA.C.7&quot;,&#xd;
+&quot;CCSS.Math.Content.3.MD.A.1&quot;,&#xd;
+&quot;FL.MAFS.3.MD.1.1&quot;,&#xd;
+&quot;FL.MAFS.3.OA.3.7&quot;&#xd;
+],&#xd;
+&quot;CURRICULUM$curriculum_codeCI&quot;: [&#xd;
+&quot;CCSS.Math.Content.3.OA.C.7&quot;,&#xd;
+&quot;CCSS.Math.Content.3.MD.A.1&quot;,&#xd;
+&quot;FL.MAFS.3.MD.1.1&quot;,&#xd;
+&quot;FL.MAFS.3.OA.3.7&quot;&#xd;
+],&#xd;
+&quot;CURRICULUM$curriculum_code_exact&quot;: [&#xd;
+&quot;CCSS.Math.Content.3.OA.C.7&quot;,&#xd;
+&quot;CCSS.Math.Content.3.MD.A.1&quot;,&#xd;
+&quot;FL.MAFS.3.MD.1.1&quot;,&#xd;
+&quot;FL.MAFS.3.OA.3.7&quot;&#xd;
+],&#xd;
+&quot;ASSESSMENT_TEST$id&quot;: [&#xd;
+20842,&#xd;
+21097,&#xd;
+27957,&#xd;
+34448,&#xd;
+123928,&#xd;
+129823,&#xd;
+139508,&#xd;
+169942,&#xd;
+173947,&#xd;
+186284,&#xd;
+187018,&#xd;
+189998,&#xd;
+197708,&#xd;
+1354777&#xd;
+],&#xd;
+&quot;RESOURCE$id&quot;: [&#xd;
+&quot;/external/resource/3673/MP COMMON CORE Math Grade 3 Item Bank r4.15 MML/Images/drawplaceholder.png&quot;&#xd;
+],&#xd;
+&quot;ITEM_ATTRIBUTE_TYPE$code&quot;: [&#xd;
+&quot;dok&quot;,&#xd;
+&quot;sub&quot;,&#xd;
+&quot;interaction&quot;&#xd;
+],&#xd;
+&quot;id&quot;: &quot;${doc_id}&quot;,&#xd;
+&quot;ASSESSMENT_ITEM$id&quot;: [&#xd;
+585932&#xd;
+],&#xd;
+&quot;ITEM_SOURCE$id&quot;: [&#xd;
+555&#xd;
+],&#xd;
+&quot;ASSESSMENT_ITEM$correct_response_count&quot;: [&#xd;
+0&#xd;
+],&#xd;
+&quot;ITEM_ATTRIBUTE$id&quot;: [&#xd;
+2,&#xd;
+25,&#xd;
+46&#xd;
+],&#xd;
+&quot;CURRICULUM$std_course_type_id&quot;: [&#xd;
+53,&#xd;
+73,&#xd;
+53&#xd;
+],&#xd;
+&quot;RESOURCE$mime_type&quot;: [&#xd;
+&quot;image/png&quot;&#xd;
+],&#xd;
+&quot;allowed_user_id&quot;: [&#xd;
+4,&#xd;
+2412&#xd;
+],&#xd;
+&quot;LAST_EDIT_TIMESTAMP&quot;: &quot;2016-12-28T13:21:42Z&quot;,&#xd;
+&quot;ASSESSMENT_ITEM$outdated&quot;: [&#xd;
+false&#xd;
+],&#xd;
+&quot;RESOURCE$moniker&quot;: [&#xd;
+&quot;drawplaceholder.png&quot;&#xd;
+],&#xd;
+&quot;grade_level&quot;: [&#xd;
+&quot;3&quot;&#xd;
+],&#xd;
+&quot;CREATE_USER$email&quot;: &quot;pmSystem&quot;,&#xd;
+&quot;ASSESSMENT_ITEM$text&quot;: [&#xd;
+&quot;A koala bear at a zoo is fed 5 ounces of leaves 2 times every day. a. Write a number sentence to show how many ounces of leaves in all the koala bear is fed every day. The koala bear is fed leaves one morning at 9:47. b. Use a number line diagram to show the time 9:47 rounded to the nearest 10 minutes. (image:drawplaceholder.png) Score Description 2 for correct answers to part a, 5 × 2 = 10 or 5 + 5 = 10 , or equivalent for correct diagram to part b 1 for correct answer to only one part 0 Response is incorrect or contains some correct work that is irrelevant to the skill or concept being measured. Blank No response. Part a: 5 × 2 = 10 or 5 + 5 = 10 , or equivalent Part b: A correct diagram shows the location of 9:47 between 9:40 and 9:50, with 9:50 identified as the nearest 10 minutes. 273&quot;&#xd;
+],&#xd;
+&quot;ASSESSMENT_ITEM$state&quot;: [&#xd;
+&quot;ACCEPTED&quot;&#xd;
+],&#xd;
+&quot;ASSESSMENT_ITEM$interaction_type&quot;: [&#xd;
+&quot;drawingInteraction&quot;&#xd;
+],&#xd;
+&quot;ASSESSMENT_ITEM$test_organization_id&quot;: [&#xd;
+4636,&#xd;
+5498,&#xd;
+4583,&#xd;
+7604,&#xd;
+7604,&#xd;
+7604,&#xd;
+7604,&#xd;
+7604,&#xd;
+7604,&#xd;
+5498,&#xd;
+5498,&#xd;
+35389,&#xd;
+35389,&#xd;
+48764&#xd;
+],&#xd;
+&quot;CREATE_USER$first_name&quot;: &quot;PM&quot;,&#xd;
+&quot;CURRICULUM$std_course_id&quot;: [&#xd;
+622,&#xd;
+926,&#xd;
+926&#xd;
+],&#xd;
+&quot;CREATE_USER$id&quot;: 1234,&#xd;
+&quot;title&quot;: &quot;138576A 585932 Paper Only: not for Online&quot;,&#xd;
+&quot;ASSESSMENT_ITEM$max_rubric_point&quot;: [&#xd;
+2&#xd;
+],&#xd;
+&quot;CURRICULUM$grade_level_id&quot;: [&#xd;
+1000005,&#xd;
+1000005,&#xd;
+1000005,&#xd;
+1000005&#xd;
+],&#xd;
+&quot;ORGANIZATION$moniker&quot;: &quot;PM_Measured Progress&quot;,&#xd;
+&quot;db_id&quot;: 585932,&#xd;
+&quot;ASSESSMENT_ITEM$title&quot;: [&#xd;
+&quot;138576A 585932 Paper Only: not for Online&quot;&#xd;
+],&#xd;
+&quot;CURRICULUM$lft&quot;: [&#xd;
+121143,&#xd;
+121187,&#xd;
+489807,&#xd;
+490473&#xd;
+],&#xd;
+&quot;CURRICULUM$id&quot;: [&#xd;
+1721883,&#xd;
+1721892,&#xd;
+1798771,&#xd;
+1799147&#xd;
+],&#xd;
+&quot;ITEM_ATTRIBUTE_TYPE$id&quot;: [&#xd;
+1000005,&#xd;
+1000009,&#xd;
+1000010&#xd;
+],&#xd;
+&quot;ASSESSMENT_ITEM$times_used&quot;: [&#xd;
+14&#xd;
+],&#xd;
+&quot;allowed_group_id&quot;: [&#xd;
+4962,&#xd;
+5968,&#xd;
+5999,&#xd;
+16221,&#xd;
+20113,&#xd;
+13109,&#xd;
+1282,&#xd;
+1355,&#xd;
+1358,&#xd;
+1944,&#xd;
+2477,&#xd;
+2501,&#xd;
+2516,&#xd;
+2525,&#xd;
+2776,&#xd;
+2779,&#xd;
+2788,&#xd;
+2930,&#xd;
+2934,&#xd;
+2944,&#xd;
+2963,&#xd;
+2965,&#xd;
+2967,&#xd;
+3249,&#xd;
+3348,&#xd;
+4585,&#xd;
+4637,&#xd;
+4638,&#xd;
+4878,&#xd;
+4879,&#xd;
+5159,&#xd;
+5494,&#xd;
+5867,&#xd;
+5902,&#xd;
+5906,&#xd;
+6245,&#xd;
+6247,&#xd;
+6256,&#xd;
+6260,&#xd;
+6261,&#xd;
+6296,&#xd;
+6299,&#xd;
+6300,&#xd;
+6301,&#xd;
+6302,&#xd;
+6303,&#xd;
+6304,&#xd;
+6305,&#xd;
+6307,&#xd;
+7769,&#xd;
+9438,&#xd;
+12371,&#xd;
+12489,&#xd;
+31588,&#xd;
+45539,&#xd;
+45904,&#xd;
+54853,&#xd;
+61888,&#xd;
+70743,&#xd;
+70874,&#xd;
+1932,&#xd;
+2583,&#xd;
+2827,&#xd;
+2860,&#xd;
+2861,&#xd;
+4151,&#xd;
+4771,&#xd;
+4781,&#xd;
+4959,&#xd;
+5245,&#xd;
+5277,&#xd;
+5608,&#xd;
+5908,&#xd;
+7766,&#xd;
+7767,&#xd;
+7768,&#xd;
+8906,&#xd;
+9067,&#xd;
+10673,&#xd;
+15874,&#xd;
+15889,&#xd;
+15890,&#xd;
+17322,&#xd;
+22114,&#xd;
+22598,&#xd;
+23220,&#xd;
+24342,&#xd;
+27152,&#xd;
+31655,&#xd;
+32285,&#xd;
+33119,&#xd;
+40416,&#xd;
+56410,&#xd;
+114397,&#xd;
+127319&#xd;
+],&#xd;
+&quot;RESOURCE$numeric_id&quot;: [&#xd;
+5128679&#xd;
+],&#xd;
+&quot;ITEM_SOURCE$moniker&quot;: [&#xd;
+&quot;MP Item Source - Math&quot;&#xd;
+],&#xd;
+&quot;ITEM_ATTRIBUTE$moniker&quot;: [&#xd;
+&quot;2 - Skill / Concept&quot;,&#xd;
+&quot;Mathematics&quot;,&#xd;
+&quot;Draw&quot;&#xd;
+],&#xd;
+&quot;LAST_EDIT_USER$first_name&quot;: &quot;Amy&quot;,&#xd;
+&quot;CREATE_TIMESTAMP&quot;: &quot;2014-12-19T14:35:21Z&quot;,&#xd;
+&quot;ORGANIZATION$abbreviation&quot;: &quot;PM_MP&quot;,&#xd;
+&quot;ITEM_ATTRIBUTE_TYPE$moniker&quot;: [&#xd;
+&quot;Depth of Knowledge&quot;,&#xd;
+&quot;Subject&quot;,&#xd;
+&quot;Question Interactions&quot;&#xd;
+],&#xd;
+&quot;ITEM_ATTRIBUTE$code&quot;: [&#xd;
+&quot;2&quot;,&#xd;
+&quot;01166&quot;,&#xd;
+&quot;drawingInteraction&quot;&#xd;
+],&#xd;
+&quot;ITEM_BANK$moniker&quot;: [&#xd;
+&quot;Math Gr 3 Item Bank&quot;&#xd;
+],&#xd;
+&quot;LAST_EDIT_USER$id&quot;: 197,&#xd;
+&quot;CREATE_USER$last_name&quot;: &quot;System&quot;,&#xd;
+&quot;ASSESSMENT_ITEM$cardinality&quot;: [&#xd;
+&quot;single&quot;&#xd;
+],&#xd;
+&quot;loadtest_s&quot;: &quot;loadtest&quot;&#xd;
+}]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${HOST}</stringProp>
+            <stringProp name="HTTPSampler.port">${PORT}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/solr/${COLLECTION}/update?commit=true</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
+            <doubleProp>
+              <name>throughput</name>
+              <value>19980.0</value>
+              <savedValue>0.0</savedValue>
+            </doubleProp>
+            <intProp name="calcMode">2</intProp>
+          </ConstantThroughputTimer>
+          <hashTree/>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+            <stringProp name="filename">a4.txt</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="variableNames">doc_id</stringProp>
+            <boolProp name="ignoreFirstLine">false</boolProp>
+            <stringProp name="delimiter">|</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">false</boolProp>
+            <boolProp name="stopThread">true</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+            <stringProp name="filename">a3.txt</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="variableNames">anc_id</stringProp>
+            <boolProp name="ignoreFirstLine">false</boolProp>
+            <stringProp name="delimiter">|</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>true</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">${__BeanShell(import org.apache.jmeter.services.FileServer; FileServer.getFileServer().getBaseDir();)}/output/search_plan_results.jtl</stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Powerhouse Thread Group - Search" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">5</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="HTTP  Controller" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${HOST}</stringProp>
+            <stringProp name="HTTPSampler.port">${PORT}</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/solr/${COLLECTION}/select?facet.field={!ex%3D&quot;CURRICULUM_lft&quot;}CURRICULUM$ancestor_id&amp;fl=ITEM_BANK$id,LAST_EDIT_USER$last_name,ORGANIZATION$id,type,CURRICULUM$ancestor_id,RESOURCE$word_count,score,CURRICULUM$curriculum_code,RESOURCE$id,ITEM_ATTRIBUTE_TYPE$code,ASSESSMENT_ITEM$high_stakes_organization_id,id,ASSESSMENT_ITEM$id,ITEM_SOURCE$id,ASSIGNED_USER$first_name,ITEM_ATTRIBUTE$id,RESOURCE$lexile,RESOURCE$mime_type,RESOURCE$search_text,LAST_EDIT_TIMESTAMP,grade_level,RESOURCE$moniker,ASSESSMENT_ITEM$text,ASSESSMENT_ITEM$state,ASSESSMENT_ITEM$label,ASSESSMENT_ITEM$interaction_type,db_link_id,CREATE_USER$first_name,CREATE_USER$id,RESOURCE$topic,ORGANIZATION$moniker,softDeleteFlag,ASSESSMENT_ITEM$title,CURRICULUM$lft,ASSIGNED_USER$id,CURRICULUM$id,ITEM_ATTRIBUTE_TYPE$id,ASSESSMENT_ITEM$times_used,ITEM_ATTRIBUTE_TYPE$description,RESOURCE$numeric_id,ITEM_ATTRIBUTE$moniker,ITEM_SOURCE$moniker,LAST_EDIT_USER$first_name,ASSIGNED_USER$last_name,CREATE_TIMESTAMP,ORGANIZATION$abbreviation,RESOURCE$subject,ITEM_ATTRIBUTE_TYPE$moniker,RESOURCE$resource_type,ITEM_ATTRIBUTE$code,LAST_EDIT_USER$id,ITEM_BANK$moniker,RESOURCE$genre,CREATE_USER$last_name,RESOURCE$flesch_kincaid,type,id,soft_delete_flag&amp;start=0&amp;facet.missing=false&amp;fq=(*:*+NOT+ASSESSMENT_ITEM$high_stakes_organization_id:37932)&amp;fq=ORGANIZATION$id:(37932+15973+8147+)&amp;fq=(allowed_group_id:(70866+37939+112677+91941+92679+37932+17598+)+OR+allowed_group_id:37932+OR+allowed_user_id:152634)&amp;fq=soft_delete_flag:false&amp;fq=(*:*+NOT+ASSESSMENT_ITEM$outdated:true)&amp;fq={!tag%3D&quot;type&quot;}type:(ASSESSMENT_ITEM+)&amp;fq={!tag%3D&quot;ASSESSMENT_ITEM_state&quot;}ASSESSMENT_ITEM$state:ACCEPTED&amp;sort=score+desc&amp;rows=0&amp;version=2&amp;q=*&amp;facet.limit=-1&amp;qf=CREATE_USER$email^1002&amp;qf=CREATE_USER$identifier^1004&amp;qf=CREATE_USER$first_name^1001&amp;qf=CREATE_USER$last_name^1001&amp;qf=LAST_EDIT_USER$email^1002&amp;qf=LAST_EDIT_USER$identifier^1004&amp;qf=LAST_EDIT_USER$first_name^1001&amp;qf=LAST_EDIT_USER$last_name^1001&amp;qf=ASSIGNED_USER$email^10002&amp;qf=ASSIGNED_USER$identifier^10004&amp;qf=ASSIGNED_USER$first_name^10001&amp;qf=ASSIGNED_USER$last_name^10001&amp;qf=ITEM_BANK$id^10002&amp;qf=ITEM_BANK$moniker^10001&amp;qf=CURRICULUM$curriculum_code^10002&amp;qf=CURRICULUM$description^10001&amp;qf=ITEM_ATTRIBUTE$moniker^10001&amp;qf=ITEM_ATTRIBUTE_TYPE$moniker^1001&amp;qf=RESOURCE$numeric_id^10004&amp;qf=RESOURCE$moniker^10002&amp;qf=RESOURCE$text^10001&amp;qf=RESOURCE$mime_type^10001&amp;qf=RESOURCE$search_text^10001&amp;qf=ITEM_SOURCE$id^10002&amp;qf=ITEM_SOURCE$moniker^10001&amp;qf=ORGANIZATION$id^10001&amp;qf=ORGANIZATION$moniker^10001&amp;qf=ORGANIZATION$abbreviation^10001&amp;qf=ASSESSMENT_ITEM$id^100004&amp;qf=ASSESSMENT_ITEM$title^100002&amp;qf=ASSESSMENT_ITEM$label^100002&amp;qf=ASSESSMENT_ITEM$text^100001&amp;facet.mincount=1&amp;facet=true&amp;wt=json&amp;facet.sort=count</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree/>
+          <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
+            <doubleProp>
+              <name>throughput</name>
+              <value>19980.0</value>
+              <savedValue>0.0</savedValue>
+            </doubleProp>
+            <intProp name="calcMode">2</intProp>
+          </ConstantThroughputTimer>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>true</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">${__BeanShell(import org.apache.jmeter.services.FileServer; FileServer.getFileServer().getBaseDir();)}/output/search_plan_results.jtl</stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
